@@ -3,8 +3,9 @@ import * as c from "../controllers/books.controller.js";
 
 const router = Router();
 
-// "/stats" нь "/:id"-аас ӨМНӨ байх ёстой
+// ТОДОРХОЙ хаягууд дээр, хувьсагчтай хаяг (/:id) доор
 router.get("/stats", c.stats);
+router.get("/search", c.search);
 
 router.get("/", c.list);
 router.get("/:id", c.getOne);

@@ -71,3 +71,10 @@ export function remove(req, res) {
   // 204: body байхгүй
   res.status(204).send();
 }
+// GET /books/search?q=node
+export function search(req, res) {
+  const { q = "" } = req.query; // q байхгүй бол хоосон текст
+  const data = searchByTitle(q);
+
+  res.json({ count: data.length, data });
+}
